@@ -6,8 +6,12 @@ new Vue({
     },
 
     computed: {
+        cleaned_word: function() {
+            return this.word.toLowerCase().trim()
+        },
+
         word_is_valid: function() {
-            return _.includes(DICTIONARY, this.word)
+            return DICTIONARY.includes(this.cleaned_word)
         },
     },
 })

@@ -33,17 +33,16 @@
             <section class="section" v-if="word.length > 1">
                 <div class="container">
                     <div v-if="word_is_valid" class="notification is-success">
-                        {{ this.word }} is a word
+                        {{ this.cleaned_word }} is a word
                     </div>
                     <div v-else class="notification is-danger">
-                        {{ this.word }} is not a word
+                        {{ this.cleaned_word }} is not a word
                     </div>
                 </div>
             </section>
         </div>
 
         <script src="//cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js"></script>
-        <script src="//cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.15/lodash.min.js"></script>
 
         <script src="./dictionary.js"></script>
         <script src="./app.js"></script>
