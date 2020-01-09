@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Word Checker</title>
+
+        <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.min.css">
+        <style>
+            [v-cloak] {
+                display: none;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="app" v-cloak>
+            <section class="section">
+                <div class="container">
+                    <div class="field">
+                        <label class="label">Word Checker</label>
+                        <div class="control">
+                            <input
+                                autofocus
+                                class="input"
+                                type="text"
+                                v-model="word"
+                            >
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="section" v-if="word.length > 1">
+                <div class="container">
+                    <div v-if="word_is_valid" class="notification is-success">
+                        {{ this.word }} is a word
+                    </div>
+                    <div v-else class="notification is-danger">
+                        {{ this.word }} is not a word
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <script src="//cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js"></script>
+
+        <script src="./dictionary.js"></script>
+        <script src="./app.js"></script>
+    </body>
+</html>
