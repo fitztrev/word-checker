@@ -7,7 +7,7 @@ new Vue({
 
     computed: {
         word_is_valid: function() {
-            return DICTIONARY.includes(this.word)
+            return _.includes(DICTIONARY, this.word)
         },
     },
 })
