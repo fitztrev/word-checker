@@ -22,28 +22,27 @@
                         <div class="control">
                             <input
                                 autofocus
-                                class="input"
+                                class="input is-large"
                                 type="text"
                                 v-model="word"
                             >
                         </div>
                     </div>
-                </div>
-            </section>
-            <section class="section" v-if="word.length > 1">
-                <div class="container">
-                    <div v-if="word_is_valid" class="notification is-success">
-                        {{ this.cleaned_word }} is a word
-                    </div>
-                    <div v-else class="notification is-danger">
-                        {{ this.cleaned_word }} is not a word
+                    <div class="container is-size-1" v-if="word.length > 1">
+                        <div v-if="word_is_valid" class="notification is-success">
+                            &checkmark; &nbsp;
+                            {{ this.cleaned_word }}
+                        </div>
+                        <div v-else class="notification is-danger">
+                            &cross; &nbsp;
+                            {{ this.cleaned_word }}
+                        </div>
                     </div>
                 </div>
             </section>
         </div>
 
         <script src="//cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js"></script>
-
         <script src="./dictionary.js"></script>
         <script src="./app.js"></script>
     </body>
