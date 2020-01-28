@@ -17,18 +17,24 @@
         <div id="app" v-cloak>
             <section class="section">
                 <div class="container">
-                    <div class="field">
-                        <label class="label">Word Checker</label>
+                    <h1 class="subtitle is-5">Word Checker</h1>
+                    <div class="field has-addons">
                         <div class="control">
                             <input
                                 autofocus
                                 class="input is-large"
                                 type="text"
                                 v-model="word"
+                                ref="wordInput"
                             >
                         </div>
+                        <div class="control" v-if="word">
+                            <a class="button is-large is-default" @click.prevent="clearWord">
+                                &times;
+                            </a>
+                        </div>
                     </div>
-                    <div class="container is-size-1" v-if="word.length > 1">
+                    <div class="container is-size-4" v-if="word.length > 1">
                         <div v-if="word_is_valid" class="notification is-success">
                             &checkmark; &nbsp;
                             {{ this.cleaned_word }}

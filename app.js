@@ -14,4 +14,12 @@ new Vue({
             return DICTIONARY.includes(this.cleaned_word)
         },
     },
+
+    methods: {
+        clearWord: function() {
+            this.word = ''
+
+            this.$refs.wordInput.focus()
+        },
+    },
 })
